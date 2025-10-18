@@ -1,0 +1,36 @@
+version: 0.0.1
+type: plugin
+author: ryantsai
+name: ftp_datasource
+label:
+  en_US: ftp_datasource
+  ja_JP: ftp_datasource
+  zh_Hans: ftp_datasource
+  pt_BR: ftp_datasource
+description:
+  en_US: FTP/SFTP/FTPS Datasource
+  ja_JP: FTP/SFTP/FTPS Datasource
+  zh_Hans: FTP/SFTP/FTPS Datasource
+  pt_BR: FTP/SFTP/FTPS Datasource
+icon: icon.svg
+icon_dark: icon-dark.svg
+resource:
+  memory: 268435456
+  permission: {}
+plugins:
+  datasources:
+    - provider/ftp_datasource.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+  minimum_dify_version: null
+created_at: 2025-10-18T11:54:55.129555283+08:00
+privacy: PRIVACY.md
+repo: https://github.com/ryantsai/dify_ftp_datasource
+verified: false
