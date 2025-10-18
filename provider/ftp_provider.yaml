@@ -1,0 +1,41 @@
+name: ftp_provider
+label:
+  en_US: FTP Provider
+  zh_Hans: FTP 提供商
+icon: icon.svg
+description:
+  en_US: FTP/SFTP/FTPS storage provider
+  zh_Hans: FTP/SFTP/FTPS 存储提供商
+authentication:
+  type: api_key
+  instruction:
+    en_US: Please enter your FTP server credentials
+    zh_Hans: 请输入您的 FTP 服务器凭据
+  variables:
+    - key: host
+      type: text
+      label:
+        en_US: Host
+        zh_Hans: 主机
+      required: true
+      placeholder:
+        en_US: FTP server host (e.g., ftp.example.com)
+        zh_Hans: FTP 服务器主机（例如：ftp.example.com）
+    - key: username
+      type: text
+      label:
+        en_US: Username
+        zh_Hans: 用户名
+      required: true
+      placeholder:
+        en_US: FTP username
+        zh_Hans: FTP 用户名
+    - key: password
+      type: password
+      label:
+        en_US: Password
+        zh_Hans: 密码
+      required: true
+      placeholder:
+        en_US: FTP password
+        zh_Hans: FTP 密码

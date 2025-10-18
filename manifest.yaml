@@ -2,22 +2,23 @@ version: 0.0.1
 type: plugin
 author: ryantsai
 name: ftp_datasource
+minimum_dify_version: 1.9.0
+tags:
+  - rag
 label:
-  en_US: ftp_datasource
-  ja_JP: ftp_datasource
-  zh_Hans: ftp_datasource
-  pt_BR: ftp_datasource
+  en_US: FTP Storage
+  zh_Hans: FTP 存储
 description:
-  en_US: FTP/SFTP/FTPS Datasource
-  ja_JP: FTP/SFTP/FTPS Datasource
-  zh_Hans: FTP/SFTP/FTPS Datasource
-  pt_BR: FTP/SFTP/FTPS Datasource
+  en_US: Access and manage files through FTP/SFTP/FTPS protocol
+  zh_Hans: 通过 FTP/SFTP/FTPS 协议访问和管理文件
 icon: icon.svg
 icon_dark: icon-dark.svg
 resource:
   memory: 268435456
   permission: {}
-plugins:
+provider_type: online_drive
+datasources:
+  - datasources/ftp_datasource.yaml
   datasources:
     - provider/ftp_datasource.yaml
 meta:
