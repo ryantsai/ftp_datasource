@@ -1,8 +1,7 @@
 from typing import Any, Mapping
-
-from dify_plugin.exceptions import ToolProviderCredentialValidationError
-from dify_plugin.provider.provider import DatasourceProvider
 from ftplib import FTP
+
+from dify_plugin.interfaces.datasource import DatasourceProvider
 
 
 class FtpProvider(DatasourceProvider):
@@ -22,5 +21,4 @@ class FtpProvider(DatasourceProvider):
             ftp.login(username, password)
             ftp.quit()
         except Exception as e:
-            raise ToolProviderCredentialValidationError(
-                f"Failed to connect to FTP server: {str(e)}")
+            raise ValueError(f"Failed to connect to FTP server: {str(e)}")

@@ -13,6 +13,7 @@ from dify_plugin.entities.datasource import (
     OnlineDriveFileBucket,
 )
 from dify_plugin.interfaces.datasource.online_drive import OnlineDriveDatasource
+import mimetypes
 
 logger = logging.getLogger(__name__)
 
@@ -88,7 +89,9 @@ class FtpDatasourceDataSource(OnlineDriveDatasource):
         file_content = b''.join(content)
         file_name = os.path.basename(file_path)
 
-        mime_type = self._get_mime_type_from_filename(file_name)
+        mime_type, _ = mimetypes.guess_type(file_name)
+        if not mime_type:
+            mime_type = "application/octet-stream"
 
         yield self.create_blob_message(file_content, meta={
             "file_name": file_name,

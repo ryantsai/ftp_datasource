@@ -2,9 +2,6 @@ version: 0.0.1
 type: plugin
 author: ryantsai
 name: ftp_datasource
-minimum_dify_version: 1.9.0
-tags:
-  - rag
 label:
   en_US: FTP Storage
   zh_Hans: FTP 存储
@@ -16,11 +13,9 @@ icon_dark: icon-dark.svg
 resource:
   memory: 268435456
   permission: {}
-provider_type: online_drive
-datasources:
-  - datasources/ftp_datasource.yaml
+plugins:
   datasources:
-    - provider/ftp_datasource.yaml
+    - provider/ftp_provider.yaml
 meta:
   version: 0.0.1
   arch:
@@ -30,8 +25,8 @@ meta:
     language: python
     version: "3.12"
     entrypoint: main
-  minimum_dify_version: null
-created_at: 2025-10-18T11:54:55.129555283+08:00
+  minimum_dify_version: "1.9.0"
+created_at: 2025-10-18T11:54:55.129555+08:00
 privacy: PRIVACY.md
 repo: https://github.com/ryantsai/dify_ftp_datasource
 verified: false
